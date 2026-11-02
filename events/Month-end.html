@@ -1,0 +1,26 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이벤트 분석 — Month-end</title><style>body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;margin:0 auto;max-width:960px;padding:12px 16px;color:#222;line-height:1.5}
+h1{font-size:1.4em}h2{border-bottom:2px solid #c9a227;padding-bottom:4px;margin-top:1.6em}
+table{border-collapse:collapse;width:100%;font-size:.88em;display:block;overflow-x:auto}
+th,td{border:1px solid #ddd;padding:4px 6px;text-align:left;vertical-align:top}th{background:#f4f1e6}
+tr.ban td{background:#fde2e2}tr.warn td{background:#fff0d9}tr.ign td{background:#f2f2f2;color:#777}
+.muted{color:#777;font-size:.9em}.note{border:1px solid #eee;padding:8px 12px;border-radius:6px;overflow-x:auto}
+a{color:#0b5cad}code{background:#f4f4f4;padding:0 3px}</style></head><body><p><a href="../calendar.html">← 캘린더</a> · <a href="index.html">이벤트 목록</a></p><div class="note"><h1>Month-end — 이벤트 프로필</h1>
+<blockquote>자동 생성. 숫자는 아래 출처 파일에서만 옴. 손으로 고칠 내용은 §7 &#x27;사람 메모&#x27; 아래에만 쓸 것(재생성 시 보존).</blockquote>
+<h2>1. 무엇·언제</h2>
+<ul><li>등급: <strong>무시</strong> (2026-11 등급표) · 발표 시각(ET): all day · 차단 창: 00:00 ~ 23:59 ET</li><li>2026-11 ~ 2027-12 예정 9회 · 분류 <code>calendar_rule</code> · 일정 신뢰도 <code>high</code></li><li>출처: (미확인)</li><li>다음 발생:</li><li>2026-11-30 Mon all day ET /  KST — Month-end last trading day [무시] </li><li>2027-01-29 Fri all day ET /  KST — Month-end last trading day [무시] </li><li>2027-02-26 Fri all day ET /  KST — Month-end last trading day [무시] </li><li>2027-04-30 Fri all day ET /  KST — Month-end last trading day [무시] </li><li>2027-05-31 Mon all day ET /  KST — Month-end last trading day [무시] </li><li>2027-07-30 Fri all day ET /  KST — Month-end last trading day [무시] </li></ul>
+<h2>2. 왜 금을 움직이나 (메커니즘)</h2>
+<p><strong>전달 경로 (읽기 노트 §3)</strong></p>
+<ul><li><strong>이벤트</strong>: 옵션 만기·롤·월말</li><li><strong>금에 전달되는 경로</strong>: 통념은 &quot;피닝·포지션 정리&quot;</li><li><strong>비고</strong>: <strong>실측에서 효과 없음</strong></li></ul>
+<p><strong>통념 검증 (읽기 노트 §4-5)</strong></p>
+<ul><li><strong>통념</strong>: 월말·분기말 리밸런스</li><li><strong>실측</strong>: 월말 ×0.90 p=0.49, 분기말 n=5</li><li><strong>판정</strong>: 입증 안 됨</li></ul>
+<h2>3. 과거 영향 실측 (GC 1분봉 2025-07 ~ 2026-10, <code>gold_events_impact_by_family.csv</code>)</h2>
+<p><strong>종일 효과</strong> (<code>gold_events_allday_effects.csv</code>, 같은 요일 평상일 대비 중앙 배수; p&lt;0.05 만 유의)</p>
+<table><tr><th>효과</th><th>지표</th><th>n</th><th>중앙 배수</th><th>p</th><th>비고</th></tr><tr><td>Month-end last trading day</td><td>rv_sess</td><td>15</td><td>0.90</td><td>0.489</td><td></td></tr><tr><td>Month-end last trading day</td><td>rv_rth</td><td>15</td><td>0.89</td><td>0.135</td><td></td></tr><tr><td>Month-end last trading day</td><td>hl1_sess</td><td>15</td><td>0.97</td><td>0.679</td><td></td></tr><tr><td>Month-end last trading day</td><td>vol_sess</td><td>15</td><td>0.93</td><td>0.561</td><td></td></tr><tr><td>Month-end last trading day</td><td>vol_rth</td><td>15</td><td>0.89</td><td>0.421</td><td></td></tr></table>
+<h2>4. 발생별 기록 (0건, <code>gold_events_event_occurrences.csv</code>)</h2>
+<p>(미확인 — 1분봉 실측 구간에 발생 없음 또는 가족 매핑 없음)</p>
+<h2>5. 발생별 전망·결과</h2>
+<ul><li>폴더 <code>Month-end/발생/</code> 에 <code>YYYY-MM-DD.md</code> 한 장씩. 예측 런이 <strong>전망</strong>(컨센서스·놀람 문턱·조건부 시나리오·예상 폭)을 쓰고, 복기 런이 같은 파일에 <strong>결과</strong>(실제값·1/5/60분 이동·방향·원인 분류 A~H)를 덧붙인다. 형식: <code>규칙/21_이벤트 분석 자료.md</code>.</li><li>지금까지 작성된 것:</li><li>(없음)</li></ul>
+<h2>6. 조사 과제 (미확인)</h2>
+<ul><li>(없음)</li></ul>
+<h2>7. 사람 메모</h2>
+<p>(없음)</p></div></body></html>
