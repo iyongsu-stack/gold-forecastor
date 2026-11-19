@@ -1,0 +1,28 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>그림 보기</title><style>
+html,body{margin:0;height:100%;background:#0f1115;color:#e6e6e6;font-family:-apple-system,'Apple SD Gothic Neo',sans-serif;overflow:hidden}
+#bar{position:fixed;top:0;left:0;right:0;display:flex;gap:6px;align-items:center;padding:6px 10px;background:#12151bcc;z-index:2;font-size:13px}
+#bar button{background:#2a2f3a;color:#e6e6e6;border:0;border-radius:4px;padding:4px 10px;font-size:14px;cursor:pointer}
+#bar button:hover{background:#3a4050}#name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#aaa}
+#stage{position:absolute;inset:0;cursor:grab;touch-action:none}#img{position:absolute;left:0;top:0;transform-origin:0 0;user-select:none;-webkit-user-drag:none;image-rendering:auto}
+</style></head><body>
+<div id="bar"><button onclick="zoom(1.25)">＋</button><button onclick="zoom(0.8)">－</button><button onclick="fit()">맞춤</button><button onclick="one()">100%</button><span id="pct"></span><span id="name"></span><a id="raw" target="_blank" style="color:#8ab4f8">원본</a></div>
+<div id="stage"><img id="img" alt=""></div>
+<script>
+var q=new URLSearchParams(location.search).get('img')||'';var img=document.getElementById('img');var st=document.getElementById('stage');
+img.src='charts/'+q;document.getElementById('name').textContent=q;document.getElementById('raw').href='charts/'+q;document.title=q;
+var sc=1,tx=0,ty=0;function apply(){img.style.transform='translate('+tx+'px,'+ty+'px) scale('+sc+')';document.getElementById('pct').textContent=Math.round(sc*100)+'%';}
+function fit(){var W=st.clientWidth,H=st.clientHeight-40;sc=Math.min(W/img.naturalWidth,H/img.naturalHeight);tx=(W-img.naturalWidth*sc)/2;ty=40+(H-img.naturalHeight*sc)/2;apply();}
+function one(){sc=1;tx=(st.clientWidth-img.naturalWidth)/2;ty=40;apply();}
+function zoomAt(f,x,y){var ns=Math.min(Math.max(sc*f,0.1),12);tx=x-(x-tx)*ns/sc;ty=y-(y-ty)*ns/sc;sc=ns;apply();}
+function zoom(f){zoomAt(f,st.clientWidth/2,st.clientHeight/2);}
+img.onload=fit;window.onresize=fit;
+st.addEventListener('wheel',function(e){e.preventDefault();zoomAt(e.deltaY<0?1.1:1/1.1,e.clientX,e.clientY);},{passive:false});
+var drag=null;st.addEventListener('pointerdown',function(e){drag={x:e.clientX-tx,y:e.clientY-ty};st.setPointerCapture(e.pointerId);st.style.cursor='grabbing';});
+st.addEventListener('pointermove',function(e){if(!drag)return;tx=e.clientX-drag.x;ty=e.clientY-drag.y;apply();});
+st.addEventListener('pointerup',function(){drag=null;st.style.cursor='grab';});
+st.addEventListener('dblclick',function(e){zoomAt(sc<1.5?2:0.5,e.clientX,e.clientY);});
+var pinch=null;st.addEventListener('touchmove',function(e){if(e.touches.length==2){var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,e.touches[0].clientY-e.touches[1].clientY);if(pinch)zoomAt(d/pinch,(e.touches[0].clientX+e.touches[1].clientX)/2,(e.touches[0].clientY+e.touches[1].clientY)/2);pinch=d;}},{passive:true});
+st.addEventListener('touchend',function(){pinch=null;});
+document.addEventListener('keydown',function(e){if(e.key=='+'||e.key=='=')zoom(1.25);if(e.key=='-')zoom(0.8);if(e.key=='0')fit();if(e.key=='1')one();});
+</script></body></html>

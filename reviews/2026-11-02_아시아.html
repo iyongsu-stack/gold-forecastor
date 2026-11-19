@@ -1,7 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="/gold-forecastor/manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="/gold-forecastor/icon-192.png"><link rel="apple-touch-icon" href="/gold-forecastor/icon-192.png"><meta name="theme-color" content="#0f1115"><title>복기 2026-11-02_아시아</title><style>
 a.zoom img{max-width:100%;border:1px solid #2a2f3a;border-radius:6px;margin:6px 0;cursor:zoom-in}
-#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99;align-items:center;justify-content:center;cursor:zoom-out;overflow:auto}
-#lb img{max-width:98vw;max-height:98vh;object-fit:contain}
 html{background:#0f1115}body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;margin:0 auto;max-width:960px;padding:12px 16px;color:#e6e6e6;line-height:1.5;background:#0f1115}
 h1{font-size:1.4em;color:#f2f2f2}.note h2{font-size:1.55em;border-bottom:2px solid #c9a227;padding-bottom:4px;margin-top:1.8em}h2{border-bottom:2px solid #c9a227;padding-bottom:4px;color:#f2f2f2}h3,h4{color:#f2f2f2}
 table{border-collapse:collapse;width:100%;font-size:.88em;display:block;overflow-x:auto;margin:.6em 0}
@@ -34,7 +32,4 @@ details.co-tip,details.co-success{border-left-color:#3cab6e}details.co-tip>summa
 <h2>4. 점수</h2>
 <p>range (없음) · dir (없음) · events — (예측 없음; 실측 RatingDog 0.071% 는 p90 안) · alerts 0/0 → <strong>(점수 미기록 — 예측 없음. 1분봉은 11-03 소급 도착)</strong></p>
 <h2>5. 개선 제안 (규칙표 수정 후보)</h2>
-<ul><li><strong>컨센 출처 고정</strong>: RatingDog 10월분 컨센이 Reuters 조사 51.6 과 Investing &quot;부합&quot;(약 52.0)으로 갈렸다. 놀람 = (실제−컨센)/문턱이 출처에 따라 0 또는 +0.4 가 된다. 이벤트별 기본 컨센 출처를 하나로 정하고(제안: 표준은 Investing, Reuters 조사는 비고) 발생 파일 §A 에 출처를 적을 것을 제안한다(월간 갱신).</li><li><strong>1분봉 대기</strong>: datacollect 구현 전까지 모든 복기가 점수 미기록이다. 첫 <code>.asia.ok</code> 가 생기면 이 노트처럼 보류된 세션을 소급 채점하지 않고(예측 없음), 그 다음 세션부터 점수를 시작한다.</li><li>13:10 KST 보류 노트의 §5 1~3번(cron 시각·유럽 이벤트 보강·전일 급변 조정)은 이미 반영되었다(운영 규칙 아시아 복기 17:10 KST, 전일 급변 조정 채택). 따라서 다시 제안하지 않는다.</li></ul></div><div id="lb" onclick="this.style.display='none'"><img id="lbimg" alt=""></div>
-<script>document.addEventListener('click',function(e){var a=e.target.closest('a.zoom');if(!a)return;e.preventDefault();
-document.getElementById('lbimg').src=a.href;document.getElementById('lb').style.display='flex';});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').style.display='none';});</script></body></html>
+<ul><li><strong>컨센 출처 고정</strong>: RatingDog 10월분 컨센이 Reuters 조사 51.6 과 Investing &quot;부합&quot;(약 52.0)으로 갈렸다. 놀람 = (실제−컨센)/문턱이 출처에 따라 0 또는 +0.4 가 된다. 이벤트별 기본 컨센 출처를 하나로 정하고(제안: 표준은 Investing, Reuters 조사는 비고) 발생 파일 §A 에 출처를 적을 것을 제안한다(월간 갱신).</li><li><strong>1분봉 대기</strong>: datacollect 구현 전까지 모든 복기가 점수 미기록이다. 첫 <code>.asia.ok</code> 가 생기면 이 노트처럼 보류된 세션을 소급 채점하지 않고(예측 없음), 그 다음 세션부터 점수를 시작한다.</li><li>13:10 KST 보류 노트의 §5 1~3번(cron 시각·유럽 이벤트 보강·전일 급변 조정)은 이미 반영되었다(운영 규칙 아시아 복기 17:10 KST, 전일 급변 조정 채택). 따라서 다시 제안하지 않는다.</li></ul></div></body></html>

@@ -1,7 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="manifest" href="/gold-forecastor/manifest.webmanifest"><link rel="icon" type="image/png" sizes="192x192" href="/gold-forecastor/icon-192.png"><link rel="apple-touch-icon" href="/gold-forecastor/icon-192.png"><meta name="theme-color" content="#0f1115"><title>이벤트 분석 — US SPG PMI final</title><style>
 a.zoom img{max-width:100%;border:1px solid #2a2f3a;border-radius:6px;margin:6px 0;cursor:zoom-in}
-#lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99;align-items:center;justify-content:center;cursor:zoom-out;overflow:auto}
-#lb img{max-width:98vw;max-height:98vh;object-fit:contain}
 html{background:#0f1115}body{font-family:-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;margin:0 auto;max-width:960px;padding:12px 16px;color:#e6e6e6;line-height:1.5;background:#0f1115}
 h1{font-size:1.4em;color:#f2f2f2}.note h2{font-size:1.55em;border-bottom:2px solid #c9a227;padding-bottom:4px;margin-top:1.8em}h2{border-bottom:2px solid #c9a227;padding-bottom:4px;color:#f2f2f2}h3,h4{color:#f2f2f2}
 table{border-collapse:collapse;width:100%;font-size:.88em;display:block;overflow-x:auto;margin:.6em 0}
@@ -39,7 +37,4 @@ details.co-tip,details.co-success{border-left-color:#3cab6e}details.co-tip>summa
 <h2>6. 조사 과제</h2>
 <ul><li>놀람(확정 − flash, 또는 확정 − 컨센) 이력 n≥8 → <code>gold_event_surprise.py</code>. 확정치 컨센은 대개 flash 값이라 놀람 = 수정폭.</li><li>대조 차감을 시뮬 스크립트에 넣을지(같은 분 비이벤트일 분포 대비 초과분) — 월간 안건.</li><li>1분봉 확장 뒤(@datacollect) 2026-11-02·11-04 를 dates.csv 에 넣어 재시뮬(n 31).</li></ul>
 <h2>7. 사람 메모</h2>
-<ul><li>(봇, 2026-11-09) 첫 등록. 처음 본 날 11-04 미국 예측(&quot;ISM 서비스 15분 선행&quot;).</li></ul></div><div id="lb" onclick="this.style.display='none'"><img id="lbimg" alt=""></div>
-<script>document.addEventListener('click',function(e){var a=e.target.closest('a.zoom');if(!a)return;e.preventDefault();
-document.getElementById('lbimg').src=a.href;document.getElementById('lb').style.display='flex';});
-document.addEventListener('keydown',function(e){if(e.key==='Escape')document.getElementById('lb').style.display='none';});</script></body></html>
+<ul><li>(봇, 2026-11-09) 첫 등록. 처음 본 날 11-04 미국 예측(&quot;ISM 서비스 15분 선행&quot;).</li></ul></div></body></html>
